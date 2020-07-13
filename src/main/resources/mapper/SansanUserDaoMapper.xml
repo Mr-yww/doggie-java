@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yww.doggie.dao.SansanDao">
+    <!-- 根据主键查询-->
+    <select id="getUser" resultType="com.yww.doggie.entity.SansanUser" parameterType="java.lang.Integer" >
+        select  *
+        from star_user
+        where oid = #{oid}
+    </select>
+</mapper>

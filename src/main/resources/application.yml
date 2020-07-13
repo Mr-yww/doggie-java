@@ -1,0 +1,35 @@
+server:
+  port: 8089
+  session-timeout: 3000
+  tomcat.uri-encoding: UTF-8
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/sansandb?useSSL=false
+    username: root
+    password: Sansan@521
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    timezone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  jmx:
+    enabled: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+    freemarker:
+      cache: false    #页面不加载缓存，修改即时生效
+
+mybatis:
+  config-location: mybatis-config.xml # mybatis配置文件所在路径
+  type-aliases-package: com.yww.doggie.entity # 所有Entity别名类所在包
+  mapper-locations: /mapper/**/*.xml
+
+mybatis.configuration.mapUnderscoreToComelCase: true
